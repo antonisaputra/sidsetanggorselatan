@@ -1,11 +1,6 @@
 <?php
 
-class Berita_model extends CI_Model{
-    public function getBerita(){
-        $this->db->order_by('id', 'DESC');
-        return $this->db->get('berita')->result_array();
-    }
-
+class Banner_model extends CI_Model{
     public function tambah(){
         $config['upload_path'] = FCPATH . '/assets/upload/';
         $config['allowed_types'] = 'jpg|png|jpeg';
@@ -13,7 +8,9 @@ class Berita_model extends CI_Model{
         $this->load->library('upload', $config);
 
         if (!$this->upload->do_upload('gambar')) {
-            redirect('Berita');
+            $this->session->set_flashdata('alert','alert-warning');
+            $this->session->set_flashdata('pesan','Gambar Gagal Di Upload File Harus JPG|PNG|JPEG');
+            redirect('Banner');
         } else {
             $gambar = $this->upload->data('file_name');
             $data = [
@@ -22,7 +19,7 @@ class Berita_model extends CI_Model{
                 'deskripsi' => $this->input->post('deskripsi')
             ];
 
-            $this->db->insert('berita', $data);
+            $this->db->insert('banner', $data);
         }
     }
 
@@ -39,9 +36,8 @@ class Berita_model extends CI_Model{
                 'judul' => $this->input->post('judul', true),
                 'deskripsi' => $this->input->post('deskripsi')
             ];
-
             $this->db->where('id', $id);
-            $this->db->update('berita', $data);
+            $this->db->update('banner', $data);
         } else {
             $gambar = $this->upload->data('file_name');
             $gambar_lama = $this->input->post('gambar_lama');
@@ -55,20 +51,7 @@ class Berita_model extends CI_Model{
             ];
 
             $this->db->where('id', $id);
-            $this->db->update('berita', $data);
+            $this->db->update('banner', $data);
         }
-    }
-
-    public function deleteBerita($id){
-        $this->db->where('id', $id);
-        $this->db->delete('berita');
-    }
-
-    public function cari_berita(){
-        $keyword = $this->input->post('keyword');
-
-        $this->db->like('judul',$keyword);
-
-        return $this->db->get('berita')->result_array();
     }
 }

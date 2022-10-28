@@ -18,7 +18,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <?= $row['nama_lengkap']; ?>
-                            <p class="fs-6 pb-0 fst-italic text-secondary"><?= $row['waktu']; ?></p>
+                            <p class="fs-6 pb-0 fst-italic text-secondary"><?= date('d F Y h:i:s A', strtotime($row['waktu'])) ;?></p>
                         </div>
                         <div class="col-md-6 text-end">
                             <small><?= $row['email']; ?></small>

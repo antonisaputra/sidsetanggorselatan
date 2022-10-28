@@ -1,11 +1,11 @@
 <main id="main" class="main">
 
     <div class="pagetitle">
-        <h1>Berita</h1>
+        <h1>Banner</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                <li class="breadcrumb-item active">Berita</li>
+                <li class="breadcrumb-item active">Banner</li>
                 <li class="breadcrumb-item active">Tambah</li>
             </ol>
         </nav>
@@ -31,7 +31,7 @@
                     </div>
                     <div class="col-12">
                         <a href="" class="btn btn-danger">Kembali</a>
-                        <button class="btn btn-primary" type="submit">Tambah Dusun</button>
+                        <button class="btn btn-primary" type="submit">Tambah Banner</button>
                     </div>
                 </form>
                 <!-- End Browser Default Validation -->

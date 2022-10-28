@@ -41,7 +41,11 @@
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top ">
+  <?php if($this->uri->segment(1) == 'Home' || $this->uri->segment(1) == ''): ?>
+    <header id="header" class="fixed-top ">
+  <?php else: ?>
+    <header id="header" class="fixed-top bg-primary">
+  <?php endif; ?>
     <div class="container d-flex align-items-center">
 
       <h4 class="logo me-auto fs-6"><a href="index.html">SID DESA SETANGGOR SELATAN</a></h4>
@@ -50,39 +54,35 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">BERANDA</a></li>
+          <li><a class="nav-link scrollto fw-bold text-light" href="<?= base_url(); ?>Home">BERANDA</a></li>
           <li class="dropdown"><a href="#"><span>PROFIL DESA</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="profil_wilayah_desa.html">Profil Wilayah Desa</a></li>
-              <li><a href="Sejarah_desa.html">Sejarah Desa</a></li>
+              <li><a href="<?= base_url(); ?>Profil_desa/profil_wilayah_desa">Profil Wilayah Desa</a></li>
+              <li><a href="<?= base_url(); ?>Profil_desa">Sejarah Desa</a></li>
             </ul>
           </li>
           <li class="dropdown"><a href="#"><span>PEMERINTAH DESA</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="visi_dan_misi.html">Visi Dan Misi</a></li>
-              <li><a href="Pemerintah_desa.html">Pemerintah Desa</a></li>
+              <li><a href="<?= base_url(); ?>Pemerintah_desa/visi_misi">Visi Dan Misi</a></li>
+              <li><a href="<?= base_url(); ?>Pemerintah_desa">Pemerintah Desa</a></li>
             </ul>
           </li>
           <li class="dropdown"><a href="#"><span>DATA DESA</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="Data_wilayah.html">Data Wilayah Administratif</a></li>
-              <li><a href="Data_pendidikan_dalam_kk.html">Data Pendidikan Dalam KK</a></li>
-              <li><a href="Data_pendidikan_ditempuh.html">Data Pendidikan Di Tempuh</a></li>
-              <li><a href="Data_Pekerjaan.html">Data Pekerjaan</a></li>
-              <li><a href="Data_agama.html">Data Agama</a></li>
-              <li><a href="Data_Jenis_kelamin.html">Data Jenis Kelamin</a></li>
-              <li><a href="Data warga negara.html">Data Warga Negara</a></li>
+              <li><a href="<?= base_url(); ?>Data_desa/data_wilayah">Data Wilayah Administratif</a></li>
+              <li><a href="<?= base_url(); ?>Data_desa/data_pendidikan_kk">Data Pendidikan Dalam KK</a></li>
+              <li><a href="<?= base_url(); ?>Data_desa/data_pendidikan_ditempuh">Data Pendidikan Di Tempuh</a></li>
+              <li><a href="<?= base_url(); ?>Data_desa/data_pekerjaan">Data Pekerjaan</a></li>
+              <li><a href="<?= base_url(); ?>Data_desa/data_agama">Data Agama</a></li>
+              <li><a href="<?= base_url(); ?>Data_desa/data_jenis_kelamin">Data Jenis Kelamin</a></li>
+              <li><a href="<?= base_url(); ?>Data_desa/warga_negara">Data Warga Negara</a></li>
             </ul>
           </li>
           <li class="dropdown"><a href="#"><span>REGULASI</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="Informasi_publik.html">Informasi Publik</a></li>
+              <li><a href="<?= base_url(); ?>Regulasi">Informasi Publik</a></li>
             </ul>
           </li>
-          <li><a class="nav-link scrollto active" href="#hero">PETA</a></li>
-        
-          </li>
-          
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 

@@ -38,3 +38,11 @@ function viewUser($folder, $file, $data)
     $ci->load->view('user/' . $folder . '/' . $file, $data);
     $ci->load->view('user/tamplates/footer', $data);
 }
+
+function is_login(){
+    $ci = get_instance();
+
+    if(!$ci->session->userdata('username')){
+        redirect('Auth');
+    }
+}

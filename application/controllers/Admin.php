@@ -5,6 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Admin extends CI_Controller{
     
     public function index(){
+        is_login();
         $data['title'] = "Admin SID Setanggor Selatan";
         $data['dusun'] = $this->db->get('dusun')->result_array();
         $this->load->view('admin/tamplates/header', $data);

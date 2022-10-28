@@ -30,15 +30,58 @@
 
       <li class="nav-item">
         <a class="nav-link <?= active_menu('Berita'); ?>" href="<?= base_url(); ?>Berita">
-          <i class="bi bi-grid"></i>
+        <i class="fa-solid fa-newspaper"></i>
           <span>Berita</span>
         </a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link <?= active_menu('Admin_komentar'); ?>" href="<?= base_url(); ?>Admin_komentar">
-          <i class="bi bi-grid"></i>
+        <i class="fa-regular fa-comment"></i>
           <span>Komentar</span>
         </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link <?= active_menu('Banner'); ?>" href="<?= base_url(); ?>Banner">
+        <i class="fa-solid fa-image"></i>
+          <span>Banner</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link <?= active_dusun_rt() ?>" data-bs-target="#datadesa" data-bs-toggle="collapse" href="#">
+        <i class="fa-solid fa-database"></i></i><span>Data Desa</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="datadesa" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="<?= base_url(); ?>Admin_data_desa/pendidikan_KK">
+              <i class="bi bi-circle"></i><span>Pendidikan Dalam KK</span>
+            </a>
+          </li>
+          <li>
+            <a href="<?= base_url(); ?>Admin_data_desa/pendidikan_ditempuh">
+              <i class="bi bi-circle"></i><span>Pendidikan Di Tempuh</span>
+            </a>
+          </li>
+          <li>
+            <a href="<?= base_url(); ?>Admin_data_desa/pekerjaan">
+              <i class="bi bi-circle"></i><span>Pekerjaan</span>
+            </a>
+          </li>
+          <li>
+            <a href="<?= base_url(); ?>Admin_data_desa/agama">
+              <i class="bi bi-circle"></i><span>Agama</span>
+            </a>
+          </li>
+          <li>
+            <a href="<?= base_url(); ?>Admin_data_desa/jenis_kelamin">
+              <i class="bi bi-circle"></i><span>Jenis Kelamin</span>
+            </a>
+          </li>
+          <li>
+            <a href="<?= base_url(); ?>Admin_data_desa/warga_negara">
+              <i class="bi bi-circle"></i><span>Warga Negara</span>
+            </a>
+          </li>
+        </ul>
   </aside><!-- End Sidebar-->
